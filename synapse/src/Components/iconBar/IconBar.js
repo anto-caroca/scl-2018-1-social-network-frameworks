@@ -1,45 +1,24 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { signOut } from '../../store/actions/authActions'
 
 const IconBar = () => {
   return (
-    <div>
+    <div className="card z-depth-0">
+        <div className="row blue-text text-darken-2">
+          <div className="blue-text text-darken-2 col s3">
+            <NavLink  to='/'><i className="fas fa-home blue-text text-darken-2"></i> Inicio</NavLink></div>
+            
+            <div className="blue-text text-darken-2 col s3">
+            <NavLink to='/friendlist'><i className="fas fa-user-friends blue-text text-darken-2 "></i> Amigos</NavLink></div>
 
-      <div className="containerIconBar">
-        <div className="listOfIconBar">
+           <div className="blue-text text-darken-2 col s3">
+            <NavLink to='/events'> <i className="far fa-calendar-alt blue-text text-darken-2"></i>Eventos</NavLink></div>
 
-          <li>
-            <NavLink to='/'><i className="fas fa-home activado fa-2x">Inicio</i> </NavLink></li>
-
-          <li>
-            <NavLink to='/friendlist'><i className="fas fa-user-friends fa-2x">Amigos</i> </NavLink></li>
-
-          <li>
-            <NavLink to='/events'> <i className="far fa-calendar-alt fa-2x">Eventos</i></NavLink></li>
-
-          <li>
-            <NavLink to='/challenge'><i className="fas fa-medal fa-2x">Desafíos</i></NavLink></li>
-
-
-
-         
-
+           <div className="blue-text text-darken-2 col s3">
+            <NavLink to='/challenge'><i className="fas fa-medal blue-text text-darken-2"></i>Desafíos</NavLink></div>
         </div>
-      </div>
-
-      <ul>
-
-      </ul>
     </div>
   )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    signOut: () => dispatch(signOut())
-  }
-}
-
-export default connect(null, mapDispatchToProps)(IconBar)
+export default (IconBar)

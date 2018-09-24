@@ -16,16 +16,15 @@ class Challenge extends Component {
           <Navbar />
       </div>
       <div className="container">
-     
+    
         <div className="row">
        
           <div className="col s12 m10 offset-m1 l6 offset-l3">
           <div className="card z-depth-0">
         <IconBar />
         </div>
-        SOY desafios!
-        <div className="divChallenges">
-                <div><img class="iconMat" src="https://image.flaticon.com/icons/svg/148/148787.svg" alt="matemática" width="100"/> <p>Matemática</p></div>
+        <div className="card z-depth-0">
+                <div> <p>Matemática</p></div>
                 <hr></hr>
                 <div> <p>Historia</p></div>
                 <hr></hr>

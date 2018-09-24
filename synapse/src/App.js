@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import NavLogin from './Components/auth/NavLogin'
 import Dashboard from './Components/dashboard/Dashboard'
 import SignIn from './Components/auth/SignIn'
 import SignUp from './Components/auth/SignUp'
@@ -8,12 +7,9 @@ import FriendList from './Components/pages/FriendList';
 import Events from './Components/pages/Events';
 import Challenge from './Components/pages/Challenge';
 
-
-
 class App extends Component {
   render() {
     return (
-
       <BrowserRouter>
         <div className="App">
           <Switch>
@@ -24,10 +20,8 @@ class App extends Component {
             <Route path='/events' component={Events} />
             <Route path='/challenge' component={Challenge} />
           </Switch>
-          <NavLogin /> 
         </div>
       </BrowserRouter>
-
     );
   }
 }

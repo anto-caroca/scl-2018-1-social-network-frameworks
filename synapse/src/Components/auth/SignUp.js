@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
+import Navbar from '../nav/Nav'
 
 class SignUp extends Component {
   state = {
@@ -23,6 +24,10 @@ class SignUp extends Component {
     const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to='/' /> 
     return (
+      <div>
+      <div>
+        <Navbar />
+      </div>
       <div className="container">
        <div className="row">
       <div className="col s12 m10 offset-m1 l6 offset-l3">
@@ -53,6 +58,7 @@ class SignUp extends Component {
         </form>
         </div>
         </div>
+      </div>
       </div>
     )
   }
