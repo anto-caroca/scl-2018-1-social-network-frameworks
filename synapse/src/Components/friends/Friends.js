@@ -5,8 +5,6 @@ import '../nav/FriendsLinks';
 import '../nav/Nav';
 
 
-
-
 const amigos = [{nombre: 'Alicia Bárcena', foto: "https://image.flaticon.com/icons/svg/53/53129.svg"
 }, {nombre: 'Héctor Abad', foto: 'https://image.flaticon.com/icons/svg/53/53060.svg'
 }, {nombre: 'Alberto Acosta', foto: 'https://image.flaticon.com/icons/svg/53/53104.svg'
@@ -24,24 +22,20 @@ const amigos = [{nombre: 'Alicia Bárcena', foto: "https://image.flaticon.com/ic
 class Friends extends Component {
     render(){
         return(
-            <div className="containerFriends">
-            
+            <div className="">
                 {amigos.map((e, i) => {
                     let num = i + 1; // esto genera el id de las fotos de los amigos
                     return (
-                        <div className="listOfFriends" key={num}>
-                            
-                            <h4 className="tituloAmigos">Amig@s</h4>
-                            <p className="friendName"> {`${e.nombre}`}</p>
+                        <div className="card z-depth-0" key={num}>
+                            <p className="friendName"> 
                             <img className="foto" src={e.foto} width="100px" height="100px" alt={e.nombre}/>
+                            {`${e.nombre}`}
+                          </p>
                         </div>
                     )
                 })}
-               
-               
             </div>
         )
     }
   }
-  
   export default Friends;

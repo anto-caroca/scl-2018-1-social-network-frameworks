@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
 import { Redirect } from 'react-router-dom'
+import Navbar from '../nav/Nav'
 
 class SignIn extends Component {
   state = {
@@ -21,8 +22,13 @@ class SignIn extends Component {
     const { authError, auth } = this.props;
     if (auth.uid) return <Redirect to='/' /> 
     return (
+      <div>
+        <div>
+          <Navbar />
+        </div>
       <div className="container">
       <div className="row">
+
       <div className="col s12 m10 offset-m1 l6 offset-l3">
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Inicia Sesión</h5>
@@ -43,6 +49,7 @@ class SignIn extends Component {
         </form>
         </div>
         </div>
+      </div>
       </div>
     )
   }
