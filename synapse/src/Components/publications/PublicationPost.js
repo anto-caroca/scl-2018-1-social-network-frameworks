@@ -15,8 +15,9 @@ const PublicationPost = ({ publication }) => {
             <p className="grey-text">{moment(publication.createdAt.toDate()).calendar()}</p>
           </div>
         </div>
-        <p className="post">{publication.content}</p>
+        <p className="post">{publication.content} </p>
         <Likes className="like" />
+        
       </div>
     </div>
   )

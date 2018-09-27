@@ -2,12 +2,19 @@ const initState = {}
 
 const projectReducer = (state = initState, action) => {
   switch (action.type) {
-    case 'CREATE_PROJECT_SUCCESS':
-      console.log('create project success');
+    case 'CREATE_POST_SUCCESS':
+      console.log('create post success');
       return state;
-    case 'CREATE_PROJECT_ERROR':
-      console.log('create project error');
+    case 'CREATE_POST_ERROR':
+      console.log('create post error');
       return state;
+    case 'DELETE_POST_SUCCESS':
+      console.log('delete post success');  
+       return state;
+    case 'DELETE_POST_ERROR':
+      console.log('delete post error');  
+       return state;
+       
     default:
       return state;
   }

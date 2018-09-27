@@ -1,19 +1,16 @@
-export const deletePublication = (publication) => {
+export const deletePublication = (id) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
-    const profile = getState().firebase.profile;
-    const authorId = getState().firebase.auth.uid;
-    firestore.collection('publications').delete({
-      ...publication,
-      authorFirstName: profile.firstName,
-      authorLastName: profile.lastName,
-      authorInitials:profile.initials, //descubrimiento!
-      authorId: authorId,
-      createdAt: new Date()
+    
+    firestore.collection('publications').delete({id
     }).then(() => {
-      dispatch({ type: 'CREATE_SUCCESS' });
+      dispatch({ type: 'DELETE_POST_SUCCESS' });
     }).catch(err => {
-      dispatch({ type: 'CREATE_ERROR' }, err);
+      dispatch({ type: 'DELETE_POST_ERROR' }, err);
     });
   }
 };
+
+
+
+

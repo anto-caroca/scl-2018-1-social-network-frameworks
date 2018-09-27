@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createPublication } from '../../store/actions/publicationActions'
 import { Redirect } from 'react-router-dom'
+import { deletePublication } from '../../store/actions/postDelete'
 
 class CreatePublication extends Component {
   state = {
@@ -19,6 +20,7 @@ class CreatePublication extends Component {
     this.props.createPublication(this.state);
   
   }
+ 
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/signin' /> 
@@ -47,8 +49,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createPublication: (publication) => dispatch(createPublication(publication))
+    createPublication: (publication) => dispatch(createPublication(publication)),
+  
+    deletePublication: (id) => dispatch(deletePublication(id))
   }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreatePublication)
